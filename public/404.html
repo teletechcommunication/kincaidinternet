@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script>
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
+      // Store the current path and redirect to root with path as parameter
+      sessionStorage.setItem('redirect', location.href);
+      location.replace(
+        location.origin + 
+        '/?/' + 
+        location.pathname.slice(1).split('/').map(function(p) {
+          return p.replace(/~/g, '~0').replace(/&/g, '~1')
+        }).join('/') + 
+        (location.search ? '&' + location.search.slice(1).replace(/~/g, '~0').replace(/&/g, '~1') : '') +
+        location.hash
+      );
+    </script>
+  </head>
+  <body>
+    <!-- GitHub Pages SPA redirect -->
+  </body>
+</html>
